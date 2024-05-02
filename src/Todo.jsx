@@ -1,19 +1,17 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TodoItem from './TodoItem';
-import { handleAddTodo, handleRemoveTodo, handleEditTodo, handleChangeStatus } from './TodoFunctions'; 
+import {  handleRemoveTodo, handleEditTodo, handleChangeStatus } from './TodoFunctions'; 
 
-const TodoList = () => {
+const Todo = () => {
   const dispatch = useDispatch();
   const todos = useSelector(state => state.todos.todos);
-
-  const [text, setText] = useState('');
+  const todo = todos.filter(todo => todo.status === 'To do');
 
   return (
     <div>
-      <h1>all taks</h1>
+      <h1>todos</h1>
       <ul>
-        {todos.map(todo => (
+        {todo.map(todo => (
           <TodoItem
             key={todo.id}
             todo={todo}
@@ -23,17 +21,8 @@ const TodoList = () => {
           />
         ))}
       </ul>
-      <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Add a todo..."
-        />
-        <button onClick={() => handleAddTodo(text, dispatch)}>Add Todo</button>
-      </div>
     </div>
   );
 };
 
-export default TodoList;
+export default Todo;
