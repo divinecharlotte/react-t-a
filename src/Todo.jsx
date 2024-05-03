@@ -9,7 +9,6 @@ const Todo = () => {
 
   return (
     <div>
-      <h1>todos</h1>
       <ul className="flex flex-col gap-5 py-5 bg-slate-100">
         {todo.map((todo) => (
           <TodoItem

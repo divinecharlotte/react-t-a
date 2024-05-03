@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
@@ -13,12 +13,14 @@ const Nav = () => {
   ).length;
 
   return (
-    <div>
-      <Link to="/">All tasks: {totalTodos}</Link>
-      <Link to="/todo">To do: {totalToDo}</Link>
-      <Link to="/in-progress">In progress: {totalInProgress}</Link>
-      <Link to="/completed">Completed: {totalCompleted}</Link>
+<div className="p-4">
+<div className="flex gap-2 p-2 bg-white  rounded-lg">
+      <NavLink to="/" activeClassName="active-link">All tasks: {totalTodos}</NavLink>
+      <NavLink to="/todo" activeClassName="active-link">To do: {totalToDo}</NavLink>
+      <NavLink to="/in-progress" activeClassName="active-link">In progress: {totalInProgress}</NavLink>
+      <NavLink to="/completed" activeClassName="active-link">Completed: {totalCompleted}</NavLink>
     </div>
+</div>
   );
 };
 

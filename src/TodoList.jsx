@@ -15,8 +15,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <h1>All Tasks</h1>
-      <ul className="flex flex-col gap-5 py-5 bg-slate-100">
+      <ul className="flex flex-col gap-5 py-5 bg-slate-100 lg:grid grid-cols-3">
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}
