@@ -11,14 +11,14 @@ const AddTodo = ({ onAddTodo }) => {
       }}
 
   return (
-    <div className="lg:flex lg:justify-center">
+    <div className="lg:flex lg:justify-center ">
       <input className="p-2 m-4 rounded"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Add a todo..."
       />
-      <button onClick={handleAddTodoClick}>Add Todo</button>
+      <button className="bg-white px-8  rounded-lg" onClick={handleAddTodoClick}>Add</button>
     </div>
   );
 };
