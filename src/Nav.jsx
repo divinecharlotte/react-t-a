@@ -13,7 +13,7 @@ const Nav = () => {
   ).length;
 
   return (
-    <div className="flex gap-2 p-2 bg-white rounded font-medium text-sm ">
+    <div className="flex gap-2 p-2 bg-white rounded font-medium text-sm lg:flex lg:justify-between">
       <Link to="/">All tasks: {totalTodos}</Link>
       <Link to="/todo">To do: {totalToDo}</Link>
       <Link to="/in-progress">In progress: {totalInProgress}</Link>

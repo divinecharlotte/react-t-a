@@ -6,12 +6,12 @@ const AddTodo = ({ onAddTodo }) => {
   
     const handleAddTodoClick = () => {
       if (text.trim()) {
-        onAddTodo(text); // Call the onAddTodo function passed from the parent component
-        setText(""); // Clear the input field after adding todo
+        onAddTodo(text); 
+        setText(""); 
       }}
 
   return (
-    <div>
+    <div className="lg:flex lg:justify-center">
       <input className="p-2 m-4 rounded"
         type="text"
         value={text}

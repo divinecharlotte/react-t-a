@@ -13,7 +13,7 @@ function App() {
     dispatch(addTodo({ text }));
   };
   return (
-    <div className="bg-gray-100 w-full h-full p-6">
+    <div className="bg-gray-100 w-full h-full p-6 min-h-screen">
       <BrowserRouter>
         <Nav />
         <Routes>
