@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 import TodoFunctions from "./TodoFunctions";
@@ -6,12 +5,6 @@ import TodoFunctions from "./TodoFunctions";
 const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todos);
-
-  const [text, setText] = useState("");
-
-  const handleAddTodoClick = () => {
-    TodoFunctions.handleAddTodo(text, setText, dispatch);
-  };
 
   return (
     <div>
@@ -30,15 +23,6 @@ const TodoList = () => {
           />
         ))}
       </ul>
-      <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Add a todo..."
-        />
-        <button onClick={handleAddTodoClick}>Add Todo</button>
-      </div>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const TodoItem = ({ todo, onRemove, onEdit, onChangeStatus }) => {
   }
 
   return (
-    <li className="bg-white flex flex-col gap-4 p-2 rounded-lg mx-6" key={todo.id}>
+    <li className="bg-white flex flex-col gap-4 p-2 rounded-lg " key={todo.id}>
       <p className={`px-2 py-1 rounded-lg w-1/3 ${statusColorClass} ${statusTextColorClass}`}>{todo.status}</p>
       <h4 className=" font-semibold">{todo.text}</h4>
       <div className="flex gap-2">
