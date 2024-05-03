@@ -10,7 +10,7 @@ const InProgressTodos = () => {
   return (
     <div>
       <h1>in-progress todos</h1>
-      <ul>
+      <ul className="flex flex-col gap-5 py-5 bg-slate-100">
         {inProgressTodos.map((todo) => (
           <TodoItem
             key={todo.id}
