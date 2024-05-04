@@ -11,8 +11,8 @@ const AddTodo = ({ onAddTodo }) => {
       }}
 
   return (
-    <div className="lg:flex lg:justify-center ">
-      <input className="p-2 m-4 rounded"
+    <div className="flex justify-center gap-4 ">
+      <input className="p-8 rounded"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}

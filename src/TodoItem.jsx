@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons';
 const TodoItem = ({ todo, onRemove, onEdit, onChangeStatus }) => {
   let statusColorClass;
   let statusTextColorClass;
@@ -28,9 +31,9 @@ const TodoItem = ({ todo, onRemove, onEdit, onChangeStatus }) => {
       <h4 className=" font-semibold">{todo.text}</h4>
       <hr className="bg-slate-300 h-0.5 w-auto" />
       <div className="flex gap-2">
-        <button className="rounded-full text-red-600 bg-red-100 px-1 " onClick={() => onRemove(todo.id)}>D</button>
-        <button className="rounded-full text-orange-600 bg-orange-100  px-1" onClick={() => onEdit(todo.id, todo.text)}>E</button>
-        <button className="rounded-full text-green-600 bg-green-100 px-1" onClick={() => onChangeStatus(todo.id, todo.status)}>S</button>
+        <button className="rounded-full text-red-600 bg-red-100 px-1 " onClick={() => onRemove(todo.id)}> <FontAwesomeIcon icon={faTrash} /></button>
+        <button className="rounded-full text-orange-600 bg-orange-100  px-1" onClick={() => onEdit(todo.id, todo.text)}><FontAwesomeIcon icon={faPenToSquare} /></button>
+        <button className="rounded-full text-green-600 bg-green-100 px-1" onClick={() => onChangeStatus(todo.id, todo.status)}><FontAwesomeIcon icon={faClosedCaptioning} /></button>
       </div>
     </li>
   );
