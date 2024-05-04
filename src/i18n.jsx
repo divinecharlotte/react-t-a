@@ -6,20 +6,22 @@ const resources = {
     translation: {
         "All Tasks": "All Tasks",
        " To do": "To do",
-       "In progress": "In progress",
+       "In Progress": "In Progress",
        "Completed": "Completed",
        "+ New Taskk": "+ New Task",
-      // Add more English translations here
+       "Add a todo...":"Add a todo...",
+       "Add":"Add"
     }
   },
   fr: {
     translation: {
       "All Tasks": "Toutes les tâches",
      "To do": "À faire",
-     "In progress": "En cours",
+     "In Progress": "En cours",
      "Completed": "Terminé",
      "+ New Task": "+ Ajouter une nouvelle tâche",
-      // Add more French translations here
+     "Add a todo...":"Ajouter une tâche...",
+     "Add":"Ajouter"
     }
   }
 };
@@ -28,10 +30,10 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', // Default language
-    fallbackLng: 'en', // Fallback language
+    lng: 'en',
+    fallbackLng: 'en', 
     interpolation: {
-      escapeValue: false // React already escapes by default
+      escapeValue: false 
     }
   });
 

@@ -18,11 +18,11 @@ const TodoFunctions = {
   },
   handleChangeStatus: (id, currentStatus, dispatch) => {
     if (currentStatus === "To do") {
-      const newStatus = "in progress";
+      const newStatus = "In Progress";
       dispatch(updateTodoStatus({ id, status: newStatus }));
     }
-    if (currentStatus === "in progress") {
-      const newStatus = "completed";
+    if (currentStatus === "In Progress") {
+      const newStatus = "Completed";
       dispatch(updateTodoStatus({ id, status: newStatus }));
     }
   },

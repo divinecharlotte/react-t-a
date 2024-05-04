@@ -16,10 +16,10 @@ const Nav = () => {
   const totalTodos = todos.length;
   const totalToDo = todos.filter((todo) => todo.status === "To do").length;
   const totalInProgress = todos.filter(
-    (todo) => todo.status === "in progress"
+    (todo) => todo.status === "In Progress"
   ).length;
   const totalCompleted = todos.filter(
-    (todo) => todo.status === "completed"
+    (todo) => todo.status === "Completed"
   ).length;
 
   const changeLanguage = (language) => {

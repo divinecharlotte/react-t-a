@@ -5,7 +5,7 @@ import TodoFunctions from "./TodoFunctions";
 const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todos);
-  const completedTodos = todos.filter((todo) => todo.status === "completed");
+  const completedTodos = todos.filter((todo) => todo.status === "Completed");
 
   return (
     <div>

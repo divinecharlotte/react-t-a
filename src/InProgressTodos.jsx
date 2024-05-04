@@ -5,7 +5,7 @@ import TodoFunctions from "./TodoFunctions";
 const InProgressTodos = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todos);
-  const inProgressTodos = todos.filter((todo) => todo.status === "in progress");
+  const inProgressTodos = todos.filter((todo) => todo.status === "In Progress");
 
   return (
     <div>
