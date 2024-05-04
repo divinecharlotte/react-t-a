@@ -1,9 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 const savedTodos = JSON.parse(localStorage.getItem('todos'));
 
+
 const todoSlice = createSlice({
   name: "todos",
-  initialState: { todos: savedTodos || [] },
+  initialState: { todos: savedTodos ||  [
+    { id: 1, text: 'Todo 1', status: 'To do' },
+    { id: 2, text: 'Todo 2', status: 'To do' },
+    { id: 3, text: 'Todo 3', status: 'To do' },
+    { id: 4, text: 'Todo 4', status: 'To do' },
+    { id: 5, text: 'Todo 5', status: 'To do' },
+    { id: 6, text: 'Todo 6', status: 'To do' },
+    { id: 7, text: 'Todo 7', status: 'To do' },
+    { id: 8, text: 'Todo 8', status: 'To do' },
+    { id: 9, text: 'Todo 9', status: 'To do' }
+  ]},
   reducers: {
     addTodo: (state, action) => {
       const newTodo = {

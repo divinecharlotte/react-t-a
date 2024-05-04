@@ -8,6 +8,9 @@ import InProgressTodos from "./InProgressTodos";
 import Nav from "./Nav";
 import Todo from "./Todo";
 import TodoList from "./TodoList";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon as solidMoon } from '@fortawesome/free-solid-svg-icons';
+import { faMoon as regularMoon } from '@fortawesome/free-regular-svg-icons';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,12 +27,12 @@ function App() {
   return (
     <div className={`w-full h-full p-6 min-h-screen ${darkMode ? 'bg-gray-900 text-black' : 'bg-gray-100 text-black'}`}>
       <BrowserRouter>
-        <Nav />
-        <div className="mb-4">
-          <button onClick={toggleDarkMode} className="bg-gray-800 text-white px-4 py-2 rounded">
-            {darkMode ? "Light" : "Dark"}
+        <div className="flex justify-end mb-4">
+          <button onClick={toggleDarkMode} className="bg-gray-200 text-black px-2 rounded">
+            <FontAwesomeIcon icon={darkMode ? solidMoon : regularMoon} />
           </button>
         </div>
+        <Nav />
         <Routes>
           <Route path="/" element={<TodoList />} />
           <Route path="/completed" element={<CompletedTodos />} />

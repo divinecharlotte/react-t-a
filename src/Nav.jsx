@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 
 const Nav = () => {
   const { t, i18n } = useTranslation();
-  
-  const [, setCurrentLanguage] = useState(i18n.language); 
-  
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language); 
+
   useEffect(() => {
     setCurrentLanguage(i18n.language);
   }, [i18n.language]);
@@ -27,17 +26,14 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex gap-2 p-2 bg-white rounded font-medium text-sm lg:flex lg:justify-between">
-      <Link to="/">{t('All Tasks')}: {totalTodos}</Link>
-      <Link to="/todo">{t('To do')}: {totalToDo}</Link>
-      <Link to="/in-progress">{t('In Progress')}: {totalInProgress}</Link>
-      <Link to="/completed">{t('Completed')}: {totalCompleted}</Link>
+    <div className="flex gap-2 p-2 lg:p-4 bg-white rounded text-xs font-medium lg:font-medium text-gray-500  lg:text-sm lg:flex lg:justify-between">
+      <Link to="/">{t('All Tasks')}: <span className="rounded bg-gray-100 px-1 lg:px-2">{totalTodos}</span></Link>
+      <Link to="/todo">{t('To do')}: <span className="rounded bg-gray-100 px-1 lg:px-2">{totalToDo}</span></Link>
+      <Link to="/in-progress">{t('In Progress')}: <span className="rounded bg-gray-100 px-1 lg:px-2">{totalInProgress}</span></Link>
+      <Link to="/completed">{t('Completed')}: <span className="rounded bg-gray-100 px-1 lg:px-2">{totalCompleted}</span></Link>
       <Link to="/add-todo">{t('+ New Task')}</Link>
-      <button onClick={() => changeLanguage('en')} className="ml-2 px-3">
-        EN
-      </button>
-      <button onClick={() => changeLanguage('fr')} className="ml-2 px-3">
-        FR
+      <button onClick={() => changeLanguage(currentLanguage === 'en' ? 'fr' : 'en')} className="ml-2 px-3">
+        {currentLanguage === 'en' ? 'FR' : 'EN'}
       </button>
     </div>
   );
